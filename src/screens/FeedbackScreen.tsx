@@ -28,6 +28,8 @@ export const FeedbackScreen: React.FC<Props> = ({ result, onPlayAgain, onExit })
 
     return (
         <div className="relative flex flex-col items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl animate-fade-in px-4">
+            <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' />
+           
             {/* Confetti */}
             {result.won &&
                 confetti.map((c) => (
@@ -64,7 +66,7 @@ export const FeedbackScreen: React.FC<Props> = ({ result, onPlayAgain, onExit })
                 >
                     {result.won ? GAME_CONFIG.texts.victory : GAME_CONFIG.texts.defeat}
                 </h2>
-                <p className="text-white/80 text-base sm:text-lg md:text-xl">
+                <p className=" text-base sm:text-lg md:text-xl">
                     {result.won ? GAME_CONFIG.texts.victoryMessage : GAME_CONFIG.texts.defeatMessage}
                 </p>
             </div>
@@ -72,14 +74,14 @@ export const FeedbackScreen: React.FC<Props> = ({ result, onPlayAgain, onExit })
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 w-full max-w-sm">
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
                     <div>
-                        <div className="text-white/60 text-xs sm:text-sm">Pares</div>
-                        <div className="text-white text-xl sm:text-2xl font-bold">
+                        <div className=" text-xs sm:text-sm">Pares</div>
+                        <div className=" text-xl sm:text-2xl font-bold">
                             {result.pairsFound}/{result.totalPairs}
                         </div>
                     </div>
                     <div>
-                        <div className="text-white/60 text-xs sm:text-sm">Tempo</div>
-                        <div className="text-white text-xl sm:text-2xl font-bold">
+                        <div className=" text-xs sm:text-sm">Tempo</div>
+                        <div className=" text-xl sm:text-2xl font-bold">
                             {result.timeSpent}s
                         </div>
                     </div>

@@ -68,17 +68,18 @@ export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) =>
     };
 
     return (
-        <div className="flex flex-col items-center gap-4 sm:gap-6 w-full max-w-4xl mx-auto px-3 sm:px-4 py-4 animate-fade-in">
+        <div className="flex flex-col items-center gap-4 sm:gap-4 w-full max-w-4xl mx-auto px-3 sm:px-4 py-2 animate-fade-in">
+            <img src={GAME_CONFIG.logo} alt="" className='w-[40vw] min-w-100' />
             {/* Header */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-3">
                 <button
                     onClick={onExit}
-                    className="text-white/70 hover:text-white transition-colors text-sm underline underline-offset-4 order-2 sm:order-1"
+                    className=" transition-colors text-sm underline underline-offset-4 order-2 sm:order-1"
                 >
                     ← Sair
                 </button>
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 order-1 sm:order-2">
-                    <span className="text-white font-bold text-sm sm:text-base">
+                    <span className=" font-bold text-sm sm:text-base">
                         {GAME_CONFIG.texts.pairsFound}: {pairsFound}/{totalPairs}
                     </span>
                 </div>
@@ -100,7 +101,7 @@ export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) =>
                     </>
                 ) : (
                     <>
-                        <div className="text-lg sm:text-2xl font-bold text-white">
+                        <div className="text-lg sm:text-2xl font-bold ">
                             🎯 {GAME_CONFIG.texts.playing}
                         </div>
                         <Timer seconds={playTimer.seconds} total={cfg.playTime} variant="play" />
