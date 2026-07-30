@@ -4,18 +4,18 @@
 // textos, imagens, tempos e dificuldades.
 // ============================================
 
-import LogoImg from '../assets/logo.png'
+import LogoImg from '../assets/logo.webp'
 
-import Img1 from '../assets/img-1.jpeg'
-import Img2 from '../assets/img-2.jpeg'
-import Img3 from '../assets/img-3.jpeg'
-import Img4 from '../assets/img-4.jpeg'
-import Img5 from '../assets/img-5.jpeg'
-import Img6 from '../assets/img-6.jpeg'
-import Img7 from '../assets/img-7.jpeg'
-import Img8 from '../assets/img-8.jpeg'
-import Img9 from '../assets/img-9.jpeg'
-import Img10 from '../assets/img-10.jpeg'
+import Img1 from '../assets/img-1.webp'
+import Img2 from '../assets/img-2.webp'
+import Img3 from '../assets/img-3.webp'
+import Img4 from '../assets/img-4.webp'
+import Img5 from '../assets/img-5.webp'
+import Img6 from '../assets/img-6.webp'
+import Img7 from '../assets/img-7.webp'
+import Img8 from '../assets/img-8.webp'
+import Img9 from '../assets/img-9.webp'
+import Img10 from '../assets/img-10.webp'
 
 
 export const GAME_CONFIG = {
@@ -44,7 +44,7 @@ export const GAME_CONFIG = {
     // 🎨 Paleta de cores (Tailwind classes)
     colors: {
         bgGradient: 'from-slate-50 via-teal-50/40 to-emerald-50/60',
-        cardBack: 'from-[#031D1B] via-[#0A3935] to-teal-900',
+        cardBack: 'from-[#E6ECEB] via-[#C2D1CF] to-[#A4BDBA]',
         cardFront: 'from-white to-slate-100',
         primary: 'from-emerald-500 to-teal-600',
         secondary: 'from-rose-500 to-pink-600',
