@@ -68,10 +68,10 @@ export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) =>
     };
 
     return (
-        <div className="flex flex-col items-center gap-4 sm:gap-6 w-full max-w-4xl mx-auto px-3 sm:px-4 py-4 animate-fade-in">
-            <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' />
+        <div className="flex flex-col items-center gap-4 sm:gap-4 w-full max-w-4xl mx-auto px-3 sm:px-4 py-2 animate-fade-in">
+            <img src={GAME_CONFIG.logo} alt="" className='w-[40vw] min-w-100' />
             {/* Header */}
-            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+            <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-3">
                 <button
                     onClick={onExit}
                     className=" transition-colors text-sm underline underline-offset-4 order-2 sm:order-1"

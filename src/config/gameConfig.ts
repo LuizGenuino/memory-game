@@ -62,7 +62,7 @@ export const GAME_CONFIG = {
     difficulties: {
         easy: {
             label: 'Fácil',
-            pairs: 5,           // 6 pares = 12 cartas
+            pairs: 10,           // 6 pares = 12 cartas
             gridCols: 4,        // 4 colunas
             memorizeTime: 10,   // segundos para memorizar
             playTime: 45,       // segundos para jogar
@@ -71,7 +71,7 @@ export const GAME_CONFIG = {
         },
         medium: {
             label: 'Médio',
-            pairs: 5,           // 8 pares = 16 cartas
+            pairs: 10,           // 8 pares = 16 cartas
             gridCols: 4,
             memorizeTime: 5,
             playTime: 45,
@@ -80,8 +80,8 @@ export const GAME_CONFIG = {
         },
         hard: {
             label: 'Difícil',
-            pairs: 5,          // 10 pares = 20 cartas
-            gridCols: 5,
+            pairs: 10,          // 10 pares = 20 cartas
+            gridCols: 4,
             memorizeTime: 0,    // sem tempo de memorização
             playTime: 45,
             color: 'from-red-500 to-rose-600',
