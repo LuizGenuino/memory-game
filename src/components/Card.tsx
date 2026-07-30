@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
     return (
         <button
             onClick={() => !disabled && onClick(card.id)}
-            disabled={disabled || card.isMatched}
+            disabled={disabled || card.isMatched || showFace}
             className={`
         relative aspect-square w-full
         [perspective:1000px]
@@ -44,9 +44,7 @@ export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
             border-2 border-white/20
           `}
                 >
-                    <div className=" text-2xl sm:text-3xl md:text-4xl font-bold animate-pulse">
-                        ?
-                    </div>
+                    <img src={GAME_CONFIG.logo} alt="" />
                 </div>
 
                 {/* Frente */}
