@@ -2,6 +2,7 @@ import React from 'react';
 import { GAME_CONFIG } from '../config/gameConfig';
 import { Button } from '../components/Button';
 
+
 interface Props {
     onStart: () => void;
 }
@@ -11,7 +12,8 @@ export const HomeScreen: React.FC<Props> = ({ onStart }) => {
         <div className="flex flex-col items-center justify-center gap-8 sm:gap-12 animate-fade-in">
             {/* Logo animado */}
             <div className="relative">
-                <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-pink-500 to-purple-500 opacity-30 animate-pulse-slow" />
+                <div className="absolute inset-0 blur-3xl" />
+                <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100'/>
                 <div className="relative flex gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center flex-wrap">
                     {['🎴', '🧠', '⚡'].map((emoji, i) => (
                         <div
@@ -26,10 +28,10 @@ export const HomeScreen: React.FC<Props> = ({ onStart }) => {
             </div>
 
             <div className="text-center space-y-3 sm:space-y-4 px-4">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-2xl tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black drop-shadow-2xl tracking-tight">
                     {GAME_CONFIG.texts.gameTitle}
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-md mx-auto">
+                <p className="text-base sm:text-lg md:text-xl max-w-md mx-auto">
                     {GAME_CONFIG.texts.gameSubtitle}
                 </p>
             </div>

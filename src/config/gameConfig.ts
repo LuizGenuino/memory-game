@@ -4,8 +4,11 @@
 // textos, imagens, tempos e dificuldades.
 // ============================================
 
+import LogoImg from '../assets/logo.png'
+
 export const GAME_CONFIG = {
     // 🎯 Título e textos gerais
+    logo: LogoImg,
     texts: {
         gameTitle: 'Jogo da Memória',
         gameSubtitle: 'Teste sua memória e agilidade!',
@@ -28,14 +31,14 @@ export const GAME_CONFIG = {
 
     // 🎨 Paleta de cores (Tailwind classes)
     colors: {
-        bgGradient: 'from-indigo-900 via-purple-900 to-pink-900',
+        bgGradient: 'from-slate-50 via-teal-50/40 to-emerald-50/60',
         cardBack: 'from-indigo-500 to-purple-600',
         cardFront: 'from-white to-slate-100',
         primary: 'from-emerald-500 to-teal-600',
         secondary: 'from-rose-500 to-pink-600',
         warning: 'from-amber-500 to-orange-600',
         danger: 'from-red-500 to-rose-600',
-        textPrimary: 'text-white',
+        textPrimary: 'text-black',
         textSecondary: 'text-slate-200',
     },
 
@@ -46,7 +49,7 @@ export const GAME_CONFIG = {
     difficulties: {
         easy: {
             label: 'Fácil',
-            pairs: 6,           // 6 pares = 12 cartas
+            pairs: 5,           // 6 pares = 12 cartas
             gridCols: 4,        // 4 colunas
             memorizeTime: 10,   // segundos para memorizar
             playTime: 45,       // segundos para jogar
@@ -55,7 +58,7 @@ export const GAME_CONFIG = {
         },
         medium: {
             label: 'Médio',
-            pairs: 8,           // 8 pares = 16 cartas
+            pairs: 5,           // 8 pares = 16 cartas
             gridCols: 4,
             memorizeTime: 5,
             playTime: 45,
@@ -64,7 +67,7 @@ export const GAME_CONFIG = {
         },
         hard: {
             label: 'Difícil',
-            pairs: 10,          // 10 pares = 20 cartas
+            pairs: 5,          // 10 pares = 20 cartas
             gridCols: 5,
             memorizeTime: 0,    // sem tempo de memorização
             playTime: 45,

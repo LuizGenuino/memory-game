@@ -44,7 +44,7 @@ export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
             border-2 border-white/20
           `}
                 >
-                    <div className="text-white/40 text-2xl sm:text-3xl md:text-4xl font-bold animate-pulse">
+                    <div className=" text-2xl sm:text-3xl md:text-4xl font-bold animate-pulse">
                         ?
                     </div>
                 </div>
