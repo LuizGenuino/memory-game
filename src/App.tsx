@@ -21,6 +21,7 @@ const App: React.FC = () => {
         p-4 sm:p-6 md:p-8
       `}
         >
+            
             {/* Bolhas decorativas de fundo */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-500 rounded-full blur-3xl opacity-20 animate-blob" />
@@ -29,6 +30,7 @@ const App: React.FC = () => {
             </div>
 
             <div className="relative z-10 w-full flex items-center justify-center">
+                
                 {screen === 'home' && <HomeScreen onStart={() => setScreen('difficulty')} />}
                 {screen === 'difficulty' && (
                     <DifficultyScreen

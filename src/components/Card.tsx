@@ -62,7 +62,8 @@ export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
             ${card.isMatched ? 'border-emerald-400 ring-2 sm:ring-4 ring-emerald-300/50 animate-pulse-slow' : 'border-white/40'}
           `}
                 >
-                    <span
+                    <img src={card.symbol} alt="" />
+                    {/* <span
                         className={`
               text-3xl sm:text-4xl md:text-5xl lg:text-6xl
               transition-transform duration-300
@@ -70,7 +71,7 @@ export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
             `}
                     >
                         {card.symbol}
-                    </span>
+                    </span> */}
                 </div>
             </div>
         </button>
