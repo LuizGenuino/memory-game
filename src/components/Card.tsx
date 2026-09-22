@@ -60,16 +60,16 @@ export const Card: React.FC<CardProps> = ({ GAME_CONFIG, card, onClick, disabled
             ${card.isMatched ? 'border-emerald-400 ring-2 sm:ring-4 ring-emerald-300/50 animate-pulse-slow' : 'border-white/40'}
           `}
                 >
-                    {typeof card.symbol === 'object' || card.symbol.match(/\.(jpeg|jpg|png|svg|webp)$/) || card.symbol.startsWith('data:image')
-                        ?
-                        (<img src={card.symbol} alt="" />)
-                        :
-                        (
+                    {typeof card.symbol === 'string' && /\.(jpeg|jpg|png|svg|webp)(?:[\?#].*)?$/i.test(card.symbol)
+                        ? (
+                            <img src={card.symbol} alt="Carta" />
+                        )
+                        : (
                             <span
                                 className={`
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-              transition-transform duration-300
-              ${card.isMatched ? 'scale-110' : ''}
+                text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+                transition-transform duration-300
+                ${card.isMatched ? 'scale-110' : ''}
             `}
                             >
                                 {card.symbol}

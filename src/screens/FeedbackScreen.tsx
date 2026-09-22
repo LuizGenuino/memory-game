@@ -73,7 +73,7 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
                 >
                     {result.won ? GAME_CONFIG.texts.victory : GAME_CONFIG.texts.defeat}
                 </h2>
-                <p className=" text-base sm:text-lg md:text-xl">
+                <p className=" text-base sm:text-lg md:text-xl animate-pulse-slow">
                     {result.won ? GAME_CONFIG.texts.victoryMessage : GAME_CONFIG.texts.defeatMessage}
                 </p>
             </div>
