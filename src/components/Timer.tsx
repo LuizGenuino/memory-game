@@ -1,5 +1,5 @@
 import React from 'react';
-import { GAME_CONFIG } from '../config/gameConfig';
+import { GAME_CONFIG } from '../games/idomedConfig';
 
 interface TimerProps {
     seconds: number;

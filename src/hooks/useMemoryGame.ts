@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { GAME_CONFIG, type DifficultyKey } from '../config/gameConfig';
+import { GAME_CONFIG, type DifficultyKey } from '../games/idomedConfig';
 import type { CardData, GamePhase } from '../types/game.types';
 
 const shuffle = <T,>(arr: T[]): T[] => {

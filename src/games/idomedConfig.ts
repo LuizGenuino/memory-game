@@ -16,10 +16,12 @@ import Img7 from '../assets/img-7.webp'
 import Img8 from '../assets/img-8.webp'
 import Img9 from '../assets/img-9.webp'
 import Img10 from '../assets/img-10.webp'
+import type { GameConfig } from '../types/game.types'
 
 
-export const GAME_CONFIG = {
+export const IDOMED_CONFIG: GameConfig = {
     // 🎯 Título e textos gerais
+    slug: 'idomed',
     logo: LogoImg,
     texts: {
         gameTitle: 'Jogo da Memória',
@@ -95,5 +97,3 @@ export const GAME_CONFIG = {
         mismatchDelay: 1000,    // ms — tempo antes de virar cartas erradas
     },
 } as const;
-
-export type DifficultyKey = keyof typeof GAME_CONFIG.difficulties;

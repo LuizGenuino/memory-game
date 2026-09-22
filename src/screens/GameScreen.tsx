@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
-import { GAME_CONFIG, type DifficultyKey } from '../config/gameConfig';
 import { useMemoryGame } from '../hooks/useMemoryGame';
 import { useTimer } from '../hooks/useTimer';
 import { Card } from '../components/Card';
 import { Timer } from '../components/Timer';
-import { type GameResult } from '../types/game.types';
+import { type GameConfig, type GameResult } from '../types/game.types';
 
 interface Props {
-    difficulty: DifficultyKey;
+    GAME_CONFIG: GameConfig
+    difficulty: keyof GameConfig['difficulties'];
     onFinish: (result: GameResult) => void;
     onExit: () => void;
 }
 
-export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) => {
+export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish, onExit }) => {
     const cfg = GAME_CONFIG.difficulties[difficulty];
     const {
         cards,
