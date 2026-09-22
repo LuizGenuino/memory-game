@@ -1,6 +1,7 @@
 import { faArrowRight, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { GLOBAL_CONFIG } from "../config/globalConfig"
+import { Link } from "react-router"
 
 const Home = () => {
     return (
@@ -31,12 +32,18 @@ const Home = () => {
                     <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-400 sm:text-lg">
                         Ofereça uma experiência interativa preparada especialmente para qualquer momento. Faça um orçamento.
                     </p> {/* CTA */}
+
                     <a href={`https://wa.me/${GLOBAL_CONFIG.footer.whatsappNumber}`} className=" group mt-10 inline-flex items-center gap-3 rounded-2xl bg-white px-7 py-4 text-sm font-bold text-slate-900 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-50 hover:shadow-emerald-500/20 active:translate-y-0 " >
                         Entrar em Contato
                         <span className=" flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-white transition-transform duration-300 group-hover:translate-x-1 " >
                             <FontAwesomeIcon icon={faArrowRight} className="h-4 w-4" />
                         </span>
                     </a>
+                    <div className="mt-4" >
+                        <Link to="/demo" className=" group mt-10 inline-flex items-center gap-3 rounded-2xl bg-white px-7 py-4 text-sm font-bold text-slate-900 shadow-2xl shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-50 hover:shadow-emerald-500/20 active:translate-y-0 " >
+                            Jogar Demo
+                        </Link>
+                    </div>
                 </div> {/* Bottom hint */}
                 <div className="absolute bottom-8 flex flex-col items-center gap-2">
                     <span className="text-xs text-slate-600"> Prepare-se </span>
