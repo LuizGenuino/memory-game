@@ -50,27 +50,31 @@ export const Card: React.FC<CardProps> = ({ GAME_CONFIG, card, onClick, disabled
                 {/* Frente */}
                 <div
                     className={`
-            absolute inset-0 rounded-xl md:rounded-2xl
-            bg-linear-to-br ${GAME_CONFIG.colors.cardFront}
-            shadow-lg
-            backface-hidden
-            transform-[rotateY(180deg)]
-            flex items-center justify-center
-            border-2
-            ${card.isMatched ? 'border-emerald-400 ring-2 sm:ring-4 ring-emerald-300/50 animate-pulse-slow' : 'border-white/40'}
-          `}
+        absolute inset-0 rounded-xl md:rounded-2xl
+        bg-linear-to-br ${GAME_CONFIG.colors.cardFront}
+        shadow-lg
+        backface-hidden
+        transform-[rotateY(180deg)]
+        flex items-center justify-center
+        border-2
+        ${card.isMatched ? 'border-emerald-400 ring-2 sm:ring-4 ring-emerald-300/50 animate-pulse-slow' : 'border-white/40'}
+    `}
                 >
                     {typeof card.symbol === 'string' && /\.(jpeg|jpg|png|svg|webp)(?:[\?#].*)?$/i.test(card.symbol)
                         ? (
-                            <img src={card.symbol} alt="Carta" />
+                            <img
+                                src={card.symbol}
+                                alt="Carta"
+                                className="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                            />
                         )
                         : (
                             <span
                                 className={`
-                text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-                transition-transform duration-300
-                ${card.isMatched ? 'scale-110' : ''}
-            `}
+                    text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+                    transition-transform duration-300
+                    ${card.isMatched ? 'scale-110' : ''}
+                `}
                             >
                                 {card.symbol}
                             </span>

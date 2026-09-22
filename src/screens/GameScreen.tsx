@@ -4,6 +4,8 @@ import { useTimer } from '../hooks/useTimer';
 import { Card } from '../components/Card';
 import { Timer } from '../components/Timer';
 import { type GameConfig, type GameResult } from '../types/game.types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeftLong, faBullseye, faEye } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     GAME_CONFIG: GameConfig
@@ -74,9 +76,10 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
             <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-3">
                 <button
                     onClick={onExit}
-                    className=" transition-colors text-sm underline underline-offset-4 order-2 sm:order-1"
+                    className=" transition-colors text-sm  order-2 sm:order-1"
                 >
-                    ← Sair
+                    <FontAwesomeIcon icon={faArrowLeftLong} className='mr-2'/>
+                     Sair
                 </button>
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 order-1 sm:order-2">
                     <span className=" font-bold text-sm sm:text-base">
@@ -89,8 +92,9 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
             <div className="w-full flex flex-col items-center gap-2">
                 {phase === 'memorize' ? (
                     <>
-                        <div className="text-lg sm:text-2xl font-bold text-amber-300 animate-pulse">
-                            👁️ {GAME_CONFIG.texts.memorize}
+                        <div className="text-lg sm:text-2xl font-bold text-amber-500 animate-pulse">
+                            <FontAwesomeIcon icon={faEye} className='mr-2'/>
+                            {GAME_CONFIG.texts.memorize}
                         </div>
                         <Timer
                             GAME_CONFIG={GAME_CONFIG}
@@ -103,7 +107,8 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
                 ) : (
                     <>
                         <div className="text-lg sm:text-2xl font-bold ">
-                            🎯 {GAME_CONFIG.texts.playing}
+                            <FontAwesomeIcon icon={faBullseye} className='mr-2 text-red-700'/>
+                             {GAME_CONFIG.texts.playing}
                         </div>
                         <Timer GAME_CONFIG={GAME_CONFIG} seconds={playTimer.seconds} total={cfg.playTime} variant="play" />
                     </>

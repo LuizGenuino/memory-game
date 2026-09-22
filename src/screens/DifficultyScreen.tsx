@@ -1,5 +1,7 @@
 import React from 'react';
 import type { GameConfig } from '../types/game.types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     GAME_CONFIG: GameConfig
@@ -62,9 +64,10 @@ export const DifficultyScreen: React.FC<Props> = ({ GAME_CONFIG, onSelect, onBac
 
             <button
                 onClick={onBack}
-                className=" transition-colors text-sm sm:text-base underline underline-offset-4"
+                className=" transition-colors text-sm sm:text-base underline-offset-4"
             >
-                ← Voltar
+                <FontAwesomeIcon icon={faArrowLeftLong} className='mr-2'/>
+             Voltar
             </button>
         </div>
     );

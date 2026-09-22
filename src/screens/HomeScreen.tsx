@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from '../components/Button';
 import type { GameConfig } from '../types/game.types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGamepad } from '@fortawesome/free-solid-svg-icons';
 
 
 interface Props {
@@ -14,7 +16,7 @@ export const HomeScreen: React.FC<Props> = ({ GAME_CONFIG, onStart }) => {
             {/* Logo animado */}
             <div className="relative">
                 <div className="absolute inset-0 blur-3xl" />
-                <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' />
+                <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100 mb-6' />
                 <div className="relative flex gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center flex-wrap">
                     {['🎴', '🧠', '⚡'].map((emoji, i) => (
                         <div
@@ -41,8 +43,8 @@ export const HomeScreen: React.FC<Props> = ({ GAME_CONFIG, onStart }) => {
                 onClick={onStart}
                 gradient={GAME_CONFIG.colors.primary}
                 size="lg"
-                icon="🎮"
             >
+                <FontAwesomeIcon icon={faGamepad} />
                 {GAME_CONFIG.texts.startButton}
             </Button>
         </div>
