@@ -4,18 +4,18 @@
 // textos, imagens, tempos e dificuldades.
 // ============================================
 
-import LogoImg from '../assets/logo.webp'
+import LogoImg from '../assets/idomed/logo.webp'
 
-import Img1 from '../assets/img-1.webp'
-import Img2 from '../assets/img-2.webp'
-import Img3 from '../assets/img-3.webp'
-import Img4 from '../assets/img-4.webp'
-import Img5 from '../assets/img-5.webp'
-import Img6 from '../assets/img-6.webp'
-import Img7 from '../assets/img-7.webp'
-import Img8 from '../assets/img-8.webp'
-import Img9 from '../assets/img-9.webp'
-import Img10 from '../assets/img-10.webp'
+import Img1 from '../assets/idomed/img-1.webp'
+import Img2 from '../assets/idomed/img-2.webp'
+import Img3 from '../assets/idomed/img-3.webp'
+import Img4 from '../assets/idomed/img-4.webp'
+import Img5 from '../assets/idomed/img-5.webp'
+import Img6 from '../assets/idomed/img-6.webp'
+import Img7 from '../assets/idomed/img-7.webp'
+import Img8 from '../assets/idomed/img-8.webp'
+import Img9 from '../assets/idomed/img-9.webp'
+import Img10 from '../assets/idomed/img-10.webp'
 import type { GameConfig } from '../types/game.types'
 
 
