@@ -13,18 +13,22 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
     const [confetti, setConfetti] = useState<Array<{ id: number; left: number; delay: number; emoji: string }>>([]);
 
     useEffect(() => {
-        if (result.won) {
-            const emojis = ['🎉', '⭐', '✨', '🎊', '💫'];
-            setConfetti(
-                Array.from({ length: 30 }, (_, i) => ({
-                    id: i,
-                    left: Math.random() * 100,
-                    delay: Math.random() * 2,
-                    emoji: emojis[Math.floor(Math.random() * emojis.length)],
-                }))
-            );
+        if (!result.won) {
+            setConfetti([])
+            return
         }
-    }, [result.won]);
+
+        const emojis = ['🎉', '⭐', '✨', '🎊', '💫', '🎉', '⭐', '✨', '🎊', '💫']
+
+        setConfetti(
+            Array.from({ length: 30 }, (_, i) => ({
+                id: i,
+                left: Math.random() * 100,
+                delay: Math.random() * 2,
+                emoji: emojis[Math.floor(Math.random() * emojis.length)],
+            }))
+        )
+    }, [result])
 
     return (
         <div className="relative flex flex-col items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl animate-fade-in px-4">
@@ -32,7 +36,8 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
 
             {/* Confetti */}
             {result.won &&
-                confetti.map((c) => (
+                <div className='fixed h-screen w-full'>
+               { confetti.map((c) => (
                     <div
                         key={c.id}
                         className="absolute top-0 text-3xl sm:text-4xl pointer-events-none animate-confetti"
@@ -43,7 +48,9 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
                     >
                         {c.emoji}
                     </div>
-                ))}
+                ))
+                }</div>
+                }
 
             <div className="relative">
                 <div

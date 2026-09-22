@@ -8,7 +8,7 @@ interface CardProps {
     disabled?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({GAME_CONFIG, card, onClick, disabled }) => {
+export const Card: React.FC<CardProps> = ({ GAME_CONFIG, card, onClick, disabled }) => {
     const showFace = card.isFlipped || card.isMatched;
 
     return (
@@ -60,16 +60,22 @@ export const Card: React.FC<CardProps> = ({GAME_CONFIG, card, onClick, disabled 
             ${card.isMatched ? 'border-emerald-400 ring-2 sm:ring-4 ring-emerald-300/50 animate-pulse-slow' : 'border-white/40'}
           `}
                 >
-                    <img src={card.symbol} alt="" />
-                    {/* <span
-                        className={`
+                    {typeof card.symbol === 'object' || card.symbol.match(/\.(jpeg|jpg|png|svg|webp)$/) || card.symbol.startsWith('data:image')
+                        ?
+                        (<img src={card.symbol} alt="" />)
+                        :
+                        (
+                            <span
+                                className={`
               text-3xl sm:text-4xl md:text-5xl lg:text-6xl
               transition-transform duration-300
               ${card.isMatched ? 'scale-110' : ''}
             `}
-                    >
-                        {card.symbol}
-                    </span> */}
+                            >
+                                {card.symbol}
+                            </span>
+                        )
+                    }
                 </div>
             </div>
         </button>
