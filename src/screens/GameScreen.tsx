@@ -23,7 +23,7 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
         isComplete,
         flipCard,
         startPlaying,
-    } = useMemoryGame(difficulty);
+    } = useMemoryGame(GAME_CONFIG, difficulty);
 
     // Timer de memorização
     const memorizeTimer = useTimer({
@@ -93,6 +93,7 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
                             👁️ {GAME_CONFIG.texts.memorize}
                         </div>
                         <Timer
+                            GAME_CONFIG={GAME_CONFIG}
                             seconds={memorizeTimer.seconds}
                             total={cfg.memorizeTime}
                             variant="memorize"
@@ -104,7 +105,7 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
                         <div className="text-lg sm:text-2xl font-bold ">
                             🎯 {GAME_CONFIG.texts.playing}
                         </div>
-                        <Timer seconds={playTimer.seconds} total={cfg.playTime} variant="play" />
+                        <Timer GAME_CONFIG={GAME_CONFIG} seconds={playTimer.seconds} total={cfg.playTime} variant="play" />
                     </>
                 )}
             </div>
@@ -120,6 +121,7 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
             >
                 {cards.map((card) => (
                     <Card
+                        GAME_CONFIG={GAME_CONFIG}
                         key={card.id}
                         card={card}
                         onClick={flipCard}

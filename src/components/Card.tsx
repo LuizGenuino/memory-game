@@ -1,14 +1,14 @@
 import React from 'react';
-import { GAME_CONFIG } from '../games/idomedConfig';
-import type { CardData } from '../types/game.types';
+import type { CardData, GameConfig } from '../types/game.types';
 
 interface CardProps {
+    GAME_CONFIG: GameConfig
     card: CardData;
     onClick: (id: number) => void;
     disabled?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
+export const Card: React.FC<CardProps> = ({GAME_CONFIG, card, onClick, disabled }) => {
     const showFace = card.isFlipped || card.isMatched;
 
     return (

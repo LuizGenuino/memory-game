@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { GAME_CONFIG, type DifficultyKey } from '../games/idomedConfig';
-import type { CardData, GamePhase } from '../types/game.types';
+import type { CardData, GameConfig, GamePhase } from '../types/game.types';
 
 const shuffle = <T,>(arr: T[]): T[] => {
     const a = [...arr];
@@ -11,7 +10,7 @@ const shuffle = <T,>(arr: T[]): T[] => {
     return a;
 };
 
-export const useMemoryGame = (difficulty: DifficultyKey) => {
+export const useMemoryGame = (GAME_CONFIG: GameConfig, difficulty: keyof GameConfig['difficulties']) => {
     const config = GAME_CONFIG.difficulties[difficulty];
 
     const [cards, setCards] = useState<CardData[]>([]);
