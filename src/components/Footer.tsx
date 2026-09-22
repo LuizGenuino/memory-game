@@ -14,7 +14,7 @@ export const Footer: React.FC = ({fontColor='black', fontColorHover='emerald-300
   const f = GLOBAL_CONFIG.footer;
 
   return (
-    <footer className="w-full py-4 flex flex-col items-center gap-1text-xs sm:text-sm">
+    <footer className=" bg-transparent w-full py-4 flex flex-col items-center gap-1text-xs sm:text-sm">
       <span>
         {f.text}{' '}
         <a

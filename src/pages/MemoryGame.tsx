@@ -6,6 +6,7 @@ import { GameScreen } from '../screens/GameScreen';
 import { FeedbackScreen } from '../screens/FeedbackScreen';
 import { useParams } from 'react-router';
 import { getGameBySlug } from '../games';
+import { Footer } from '../components/Footer';
 
 
 const MemoryGame: React.FC = () => {
@@ -36,7 +37,7 @@ const MemoryGame: React.FC = () => {
                 p-4 sm:p-6 md:p-8
             `}
         >
-
+            <div></div>
             {/* Bolhas decorativas de fundo */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-500 rounded-full blur-3xl opacity-20 animate-blob" />
@@ -75,7 +76,7 @@ const MemoryGame: React.FC = () => {
                     />
                 )}
             </div>
-
+                <Footer />
         </div>
     );
 };
