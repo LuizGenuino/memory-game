@@ -3,7 +3,7 @@ import {faArrowLeft, faHouse, faMagnifyingGlass} from '@fortawesome/free-solid-s
 
 export default function NotFound() {
     return (
-        <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50 flex items-center justify-center px-6">
+        <main className="min-h-screen bg-linear-to-br from-slate-50 via-white to-emerald-50 flex items-center justify-center px-6">
             <div className="w-full max-w-2xl text-center">
 
                 {/* Código do erro */}
@@ -13,7 +13,7 @@ export default function NotFound() {
                     </span>
 
                     <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="h-20 w-20 sm:h-28 sm:w-28 rounded-3xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-xl shadow-emerald-500/20 flex items-center justify-center rotate-3">
+                        <div className="h-20 w-20 sm:h-28 sm:w-28 rounded-3xl bg-linear-to-br from-emerald-500 to-teal-600 shadow-xl shadow-emerald-500/20 flex items-center justify-center rotate-3">
                         <FontAwesomeIcon icon={faMagnifyingGlass} className="w-10 h-10 sm:w-14 sm:h-14 text-white -rotate-3" />
 
                         </div>
@@ -60,7 +60,7 @@ export default function NotFound() {
                             inline-flex items-center justify-center gap-2
                             w-full sm:w-auto
                             rounded-xl
-                            bg-gradient-to-r from-emerald-500 to-teal-600
+                            bg-linear-to-r from-emerald-500 to-teal-600
                             px-5 py-3
                             text-sm font-semibold text-white
                             shadow-lg shadow-emerald-500/20

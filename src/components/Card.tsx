@@ -17,7 +17,7 @@ export const Card: React.FC<CardProps> = ({ GAME_CONFIG, card, onClick, disabled
             disabled={disabled || card.isMatched || showFace}
             className={`
         relative aspect-square w-full
-        [perspective:1000px]
+        perspective-[1000px]
         group
         transition-transform duration-200
         ${!disabled && !card.isMatched ? 'hover:scale-105 active:scale-95' : ''}
@@ -28,18 +28,18 @@ export const Card: React.FC<CardProps> = ({ GAME_CONFIG, card, onClick, disabled
             <div
                 className={`
           relative w-full h-full
-          transition-transform duration-[600ms]
-          [transform-style:preserve-3d]
-          ${showFace ? '[transform:rotateY(180deg)]' : ''}
+          transition-transform duration-600
+          transform-3d
+          ${showFace ? 'transform-[rotateY(180deg)]' : ''}
         `}
             >
                 {/* Verso */}
                 <div
                     className={`
             absolute inset-0 rounded-xl md:rounded-2xl
-            bg-gradient-to-br ${GAME_CONFIG.colors.cardBack}
+            bg-linear-to-br ${GAME_CONFIG.colors.cardBack}
             shadow-lg
-            [backface-visibility:hidden]
+            backface-hidden
             flex items-center justify-center
             border-2 border-white/20
           `}
@@ -51,10 +51,10 @@ export const Card: React.FC<CardProps> = ({ GAME_CONFIG, card, onClick, disabled
                 <div
                     className={`
             absolute inset-0 rounded-xl md:rounded-2xl
-            bg-gradient-to-br ${GAME_CONFIG.colors.cardFront}
+            bg-linear-to-br ${GAME_CONFIG.colors.cardFront}
             shadow-lg
-            [backface-visibility:hidden]
-            [transform:rotateY(180deg)]
+            backface-hidden
+            transform-[rotateY(180deg)]
             flex items-center justify-center
             border-2
             ${card.isMatched ? 'border-emerald-400 ring-2 sm:ring-4 ring-emerald-300/50 animate-pulse-slow' : 'border-white/40'}

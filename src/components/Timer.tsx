@@ -37,7 +37,7 @@ export const Timer: React.FC<TimerProps> = ({GAME_CONFIG, seconds, total, label,
             </div>
             <div className="h-2 sm:h-3 w-full bg-white/10 rounded-full overflow-hidden backdrop-blur-sm border border-white/20">
                 <div
-                    className={`h-full bg-gradient-to-r ${gradient} transition-all duration-1000 ease-linear rounded-full shadow-lg`}
+                    className={`h-full bg-linear-to-r ${gradient} transition-all duration-1000 ease-linear rounded-full shadow-lg`}
                     style={{ width: `${percent}%` }}
                 />
             </div>

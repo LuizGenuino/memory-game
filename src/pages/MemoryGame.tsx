@@ -32,7 +32,7 @@ const MemoryGame: React.FC = () => {
             className={`
                 h-screen
                 w-full
-                bg-gradient-to-br ${GAME_CONFIG.colors.bgGradient}
+                bg-linear-to-br ${GAME_CONFIG.colors.bgGradient}
                 relative 
                 flex flex-col items-center justify-between
                 p-4 sm:p-6 md:p-8
