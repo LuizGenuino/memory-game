@@ -1,14 +1,16 @@
 import React from 'react';
-import { GAME_CONFIG, type DifficultyKey } from '../config/gameConfig';
+import type { GameConfig } from '../types/game.types';
 
 interface Props {
-    onSelect: (difficulty: DifficultyKey) => void;
+    GAME_CONFIG: GameConfig
+    difficulty: keyof GameConfig['difficulties'];
+    onSelect: (difficulty: keyof GameConfig['difficulties']) => void;
     onBack: () => void;
 }
 
-export const DifficultyScreen: React.FC<Props> = ({ onSelect, onBack }) => {
+export const DifficultyScreen: React.FC<Props> = ({ GAME_CONFIG, onSelect, onBack }) => {
     const difficulties = Object.entries(GAME_CONFIG.difficulties) as [
-        DifficultyKey,
+        keyof GameConfig['difficulties'],
         typeof GAME_CONFIG.difficulties.easy
     ][];
 

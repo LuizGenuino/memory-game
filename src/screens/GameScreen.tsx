@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
-import { GAME_CONFIG, type DifficultyKey } from '../config/gameConfig';
 import { useMemoryGame } from '../hooks/useMemoryGame';
 import { useTimer } from '../hooks/useTimer';
 import { Card } from '../components/Card';
 import { Timer } from '../components/Timer';
-import { type GameResult } from '../types/game.types';
+import { type GameConfig, type GameResult } from '../types/game.types';
 
 interface Props {
-    difficulty: DifficultyKey;
+    GAME_CONFIG: GameConfig
+    difficulty: keyof GameConfig['difficulties'];
     onFinish: (result: GameResult) => void;
     onExit: () => void;
 }
 
-export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) => {
+export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish, onExit }) => {
     const cfg = GAME_CONFIG.difficulties[difficulty];
     const {
         cards,
@@ -23,7 +23,7 @@ export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) =>
         isComplete,
         flipCard,
         startPlaying,
-    } = useMemoryGame(difficulty);
+    } = useMemoryGame(GAME_CONFIG, difficulty);
 
     // Timer de memorização
     const memorizeTimer = useTimer({
@@ -93,6 +93,7 @@ export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) =>
                             👁️ {GAME_CONFIG.texts.memorize}
                         </div>
                         <Timer
+                            GAME_CONFIG={GAME_CONFIG}
                             seconds={memorizeTimer.seconds}
                             total={cfg.memorizeTime}
                             variant="memorize"
@@ -104,7 +105,7 @@ export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) =>
                         <div className="text-lg sm:text-2xl font-bold ">
                             🎯 {GAME_CONFIG.texts.playing}
                         </div>
-                        <Timer seconds={playTimer.seconds} total={cfg.playTime} variant="play" />
+                        <Timer GAME_CONFIG={GAME_CONFIG} seconds={playTimer.seconds} total={cfg.playTime} variant="play" />
                     </>
                 )}
             </div>
@@ -120,6 +121,7 @@ export const GameScreen: React.FC<Props> = ({ difficulty, onFinish, onExit }) =>
             >
                 {cards.map((card) => (
                     <Card
+                        GAME_CONFIG={GAME_CONFIG}
                         key={card.id}
                         card={card}
                         onClick={flipCard}

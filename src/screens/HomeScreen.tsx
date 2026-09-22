@@ -1,19 +1,20 @@
 import React from 'react';
-import { GAME_CONFIG } from '../config/gameConfig';
 import { Button } from '../components/Button';
+import type { GameConfig } from '../types/game.types';
 
 
 interface Props {
+    GAME_CONFIG: GameConfig
     onStart: () => void;
 }
 
-export const HomeScreen: React.FC<Props> = ({ onStart }) => {
+export const HomeScreen: React.FC<Props> = ({ GAME_CONFIG, onStart }) => {
     return (
         <div className="flex flex-col items-center justify-center gap-8 sm:gap-12 animate-fade-in">
             {/* Logo animado */}
             <div className="relative">
                 <div className="absolute inset-0 blur-3xl" />
-                <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100'/>
+                <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' />
                 <div className="relative flex gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center flex-wrap">
                     {['🎴', '🧠', '⚡'].map((emoji, i) => (
                         <div

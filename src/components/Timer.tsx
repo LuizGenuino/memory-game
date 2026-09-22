@@ -1,14 +1,15 @@
 import React from 'react';
-import { GAME_CONFIG } from '../config/gameConfig';
+import type { GameConfig } from '../types/game.types';
 
 interface TimerProps {
+    GAME_CONFIG: GameConfig
     seconds: number;
     total: number;
     label?: string;
     variant?: 'memorize' | 'play';
 }
 
-export const Timer: React.FC<TimerProps> = ({ seconds, total, label, variant = 'play' }) => {
+export const Timer: React.FC<TimerProps> = ({GAME_CONFIG, seconds, total, label, variant = 'play' }) => {
     const percent = Math.max(0, Math.min(100, (seconds / total) * 100));
     const isLow = seconds <= 10 && variant === 'play';
 

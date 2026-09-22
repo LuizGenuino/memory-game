@@ -1,14 +1,14 @@
 import React from 'react';
-import { GAME_CONFIG } from '../config/gameConfig';
-import type { CardData } from '../types/game.types';
+import type { CardData, GameConfig } from '../types/game.types';
 
 interface CardProps {
+    GAME_CONFIG: GameConfig
     card: CardData;
     onClick: (id: number) => void;
     disabled?: boolean;
 }
 
-export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
+export const Card: React.FC<CardProps> = ({ GAME_CONFIG, card, onClick, disabled }) => {
     const showFace = card.isFlipped || card.isMatched;
 
     return (
@@ -60,16 +60,22 @@ export const Card: React.FC<CardProps> = ({ card, onClick, disabled }) => {
             ${card.isMatched ? 'border-emerald-400 ring-2 sm:ring-4 ring-emerald-300/50 animate-pulse-slow' : 'border-white/40'}
           `}
                 >
-                    <img src={card.symbol} alt="" />
-                    {/* <span
-                        className={`
-              text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-              transition-transform duration-300
-              ${card.isMatched ? 'scale-110' : ''}
+                    {typeof card.symbol === 'string' && /\.(jpeg|jpg|png|svg|webp)(?:[\?#].*)?$/i.test(card.symbol)
+                        ? (
+                            <img src={card.symbol} alt="Carta" />
+                        )
+                        : (
+                            <span
+                                className={`
+                text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+                transition-transform duration-300
+                ${card.isMatched ? 'scale-110' : ''}
             `}
-                    >
-                        {card.symbol}
-                    </span> */}
+                            >
+                                {card.symbol}
+                            </span>
+                        )
+                    }
                 </div>
             </div>
         </button>

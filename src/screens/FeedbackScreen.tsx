@@ -1,38 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { GAME_CONFIG } from '../config/gameConfig';
-import { type GameResult } from '../types/game.types';
+import { type GameConfig, type GameResult } from '../types/game.types';
 import { Button } from '../components/Button';
 
 interface Props {
+    GAME_CONFIG: GameConfig
     result: GameResult;
     onPlayAgain: () => void;
     onExit: () => void;
 }
 
-export const FeedbackScreen: React.FC<Props> = ({ result, onPlayAgain, onExit }) => {
+export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAgain, onExit }) => {
     const [confetti, setConfetti] = useState<Array<{ id: number; left: number; delay: number; emoji: string }>>([]);
 
     useEffect(() => {
-        if (result.won) {
-            const emojis = ['🎉', '⭐', '✨', '🎊', '💫'];
-            setConfetti(
-                Array.from({ length: 30 }, (_, i) => ({
-                    id: i,
-                    left: Math.random() * 100,
-                    delay: Math.random() * 2,
-                    emoji: emojis[Math.floor(Math.random() * emojis.length)],
-                }))
-            );
+        if (!result.won) {
+            setConfetti([])
+            return
         }
-    }, [result.won]);
+
+        const emojis = ['🎉', '⭐', '✨', '🎊', '💫', '🎉', '⭐', '✨', '🎊', '💫']
+
+        setConfetti(
+            Array.from({ length: 30 }, (_, i) => ({
+                id: i,
+                left: Math.random() * 100,
+                delay: Math.random() * 2,
+                emoji: emojis[Math.floor(Math.random() * emojis.length)],
+            }))
+        )
+    }, [result])
 
     return (
         <div className="relative flex flex-col items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl animate-fade-in px-4">
             <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' />
-           
+
             {/* Confetti */}
             {result.won &&
-                confetti.map((c) => (
+                <div className='fixed h-screen w-full'>
+               { confetti.map((c) => (
                     <div
                         key={c.id}
                         className="absolute top-0 text-3xl sm:text-4xl pointer-events-none animate-confetti"
@@ -43,7 +48,9 @@ export const FeedbackScreen: React.FC<Props> = ({ result, onPlayAgain, onExit })
                     >
                         {c.emoji}
                     </div>
-                ))}
+                ))
+                }</div>
+                }
 
             <div className="relative">
                 <div
@@ -66,7 +73,7 @@ export const FeedbackScreen: React.FC<Props> = ({ result, onPlayAgain, onExit })
                 >
                     {result.won ? GAME_CONFIG.texts.victory : GAME_CONFIG.texts.defeat}
                 </h2>
-                <p className=" text-base sm:text-lg md:text-xl">
+                <p className=" text-base sm:text-lg md:text-xl animate-pulse-slow">
                     {result.won ? GAME_CONFIG.texts.victoryMessage : GAME_CONFIG.texts.defeatMessage}
                 </p>
             </div>
