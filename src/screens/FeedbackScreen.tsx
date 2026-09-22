@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { type GameConfig, type GameResult } from '../types/game.types';
 import { Button } from '../components/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDoorOpen, faRepeat } from '@fortawesome/free-solid-svg-icons';
 
 interface Props {
     GAME_CONFIG: GameConfig
@@ -100,18 +102,18 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
                     onClick={onPlayAgain}
                     gradient={GAME_CONFIG.colors.primary}
                     size="md"
-                    icon="🔄"
                     fullWidth
                 >
+                    <FontAwesomeIcon icon={faRepeat} />
                     {GAME_CONFIG.texts.playAgain}
                 </Button>
                 <Button
                     onClick={onExit}
                     gradient={GAME_CONFIG.colors.danger}
                     size="md"
-                    icon="🚪"
                     fullWidth
                 >
+                    <FontAwesomeIcon icon={faDoorOpen} />
                     {GAME_CONFIG.texts.exit}
                 </Button>
             </div>
