@@ -7,6 +7,7 @@ import { FeedbackScreen } from '../screens/FeedbackScreen';
 import { useParams } from 'react-router';
 import { getGameBySlug } from '../games';
 import { Footer } from '../components/Footer';
+import NotFound from './NotFoundPage';
 
 
 const MemoryGame: React.FC = () => {
@@ -14,7 +15,7 @@ const MemoryGame: React.FC = () => {
     const GAME_CONFIG = getGameBySlug(slug)
 
     if (!GAME_CONFIG) {
-        return <h1>404</h1>
+        return <NotFound/>
     }
 
 
