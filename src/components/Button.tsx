@@ -30,7 +30,7 @@ export const Button: React.FC<ButtonProps> = ({
         ${fullWidth ? 'w-full' : ''}
         ${sizes[size]}
         relative overflow-hidden
-        bg-gradient-to-r ${gradient}
+        bg-linear-to-r ${gradient}
         text-white font-bold rounded-2xl
         shadow-xl shadow-black/30
         transition-all duration-300

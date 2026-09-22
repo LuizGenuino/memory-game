@@ -30,7 +30,7 @@ export const DifficultyScreen: React.FC<Props> = ({ GAME_CONFIG, onSelect, onBac
                         style={{ animationDelay: `${i * 0.1}s` }}
                         className={`
                             group relative overflow-hidden
-                            bg-gradient-to-br ${cfg.color}
+                            bg-linear-to-br ${cfg.color}
                             rounded-3xl p-6 sm:p-8
                             shadow-xl shadow-black/30
                             border-2 border-white/20
