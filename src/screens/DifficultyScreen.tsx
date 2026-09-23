@@ -18,7 +18,7 @@ export const DifficultyScreen: React.FC<Props> = ({ GAME_CONFIG, onSelect, onBac
 
     return (
         <div className="flex flex-col items-center justify-center gap-6 sm:gap-10 w-full max-w-4xl animate-fade-in px-4">
-            <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' />
+            {/* <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' /> */}
 
             <h2 className="text-3xl sm:text-3xl md:text-4xl font-black text-center drop-shadow-lg">
                 {GAME_CONFIG.texts.difficultyTitle}

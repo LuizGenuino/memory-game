@@ -16,7 +16,7 @@ export const HomeScreen: React.FC<Props> = ({ GAME_CONFIG, onStart }) => {
             {/* Logo animado */}
             <div className="relative">
                 <div className="absolute inset-0 blur-3xl" />
-                <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100 mb-6' />
+                {/* <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100 mb-6' /> */}
                 <div className="relative flex gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center flex-wrap">
                     {['🎴', '🧠', '⚡'].map((emoji, i) => (
                         <div
