@@ -45,7 +45,7 @@ export const COMETA_CONFIG: GameConfig = {
 
     // 🎨 Paleta de cores (Tailwind classes)
     colors: {
-        bgGradient: 'from-slate-50 via-teal-50/40 to-emerald-50/60',
+        bgGradient: 'from-red-50/40 via-blue-50/40 to-green-50/40',
         cardBack: 'from-[#E6ECEB] via-[#C2D1CF] to-[#A4BDBA]',
         cardFront: 'from-white to-slate-100',
         primary: 'from-emerald-500 to-teal-600',

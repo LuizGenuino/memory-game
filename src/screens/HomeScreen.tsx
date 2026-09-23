@@ -31,7 +31,7 @@ export const HomeScreen: React.FC<Props> = ({ GAME_CONFIG, onStart }) => {
             </div>
 
             <div className="text-center space-y-3 sm:space-y-4 px-4">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black drop-shadow-2xl tracking-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl tracking-tight">
                     {GAME_CONFIG.texts.gameTitle}
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl max-w-md mx-auto">
