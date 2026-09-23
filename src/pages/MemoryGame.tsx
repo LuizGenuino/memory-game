@@ -15,7 +15,7 @@ const MemoryGame: React.FC = () => {
     const GAME_CONFIG = getGameBySlug(slug)
 
     if (!GAME_CONFIG) {
-        return <NotFound/>
+        return <NotFound />
     }
 
 
@@ -35,7 +35,7 @@ const MemoryGame: React.FC = () => {
                 bg-linear-to-br ${GAME_CONFIG.colors.bgGradient}
                 relative 
                 flex flex-col items-center justify-between
-                p-4 sm:p-6 md:p-8
+                p-4 sm:p-6
             `}
         >
             <div></div>
@@ -46,6 +46,7 @@ const MemoryGame: React.FC = () => {
                 <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-blob animation-delay-4000" />
             </div>
 
+            <img src={GAME_CONFIG.logo} alt="" className='h-[70vw] max-h-80' />
             <div className="relative z-10 w-full flex items-center justify-center">
 
                 {screen === 'home' && <HomeScreen GAME_CONFIG={GAME_CONFIG} onStart={() => setScreen('difficulty')} />}
@@ -77,7 +78,7 @@ const MemoryGame: React.FC = () => {
                     />
                 )}
             </div>
-                <Footer />
+            <Footer />
         </div>
     );
 };
