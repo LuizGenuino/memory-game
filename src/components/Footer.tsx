@@ -10,12 +10,12 @@ type props = {
 }
 
 
-export const Footer: React.FC = ({fontColor='black', fontColorHover='emerald-300'}: props) => {
+export const Footer: React.FC = ({fontColor='text-black', fontColorHover='text-emerald-300'}: props) => {
   const f = GLOBAL_CONFIG.footer;
 
   return (
-    <footer className=" bg-transparent w-full py-4 flex flex-col items-center gap-1text-xs sm:text-sm">
-      <span>
+    <footer className=" bg-transparent w-full py-4 flex flex-col items-center gap-1">
+      <span className='text-xs' >
         {f.text}{' '}
         <a
           href={f.websiteUrl}
@@ -30,7 +30,7 @@ export const Footer: React.FC = ({fontColor='black', fontColorHover='emerald-300
         href={f.instagramUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex items-center gap-1 text-${fontColor} hover:text-${fontColorHover} transition-colors`}
+        className={`flex text-xs items-center gap-1 ${fontColor} hover:${fontColorHover} transition-colors`}
       >
         <FontAwesomeIcon icon={faInstagram} /> {f.instagramLabel}
       </a>

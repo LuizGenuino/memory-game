@@ -30,29 +30,28 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
                 emoji: emojis[Math.floor(Math.random() * emojis.length)],
             }))
         )
-    }, [result])
+    }, [])
 
     return (
         <div className="relative flex flex-col items-center justify-center gap-6 sm:gap-10 w-full max-w-2xl animate-fade-in px-4">
-            {/* <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100' /> */}
 
             {/* Confetti */}
             {result.won &&
                 <div className='fixed h-screen w-full'>
-               { confetti.map((c) => (
-                    <div
-                        key={c.id}
-                        className="absolute top-0 text-3xl sm:text-4xl pointer-events-none animate-confetti"
-                        style={{
-                            left: `${c.left}%`,
-                            animationDelay: `${c.delay}s`,
-                        }}
-                    >
-                        {c.emoji}
-                    </div>
-                ))
-                }</div>
-                }
+                    {confetti.map((c) => (
+                        <div
+                            key={c.id}
+                            className="absolute top-[-200] text-3xl sm:text-4xl pointer-events-none animate-confetti"
+                            style={{
+                                left: `${c.left}%`,
+                                animationDelay: `${c.delay}s`,
+                            }}
+                        >
+                            {c.emoji}
+                        </div>
+                    ))
+                    }</div>
+            }
 
             <div className="relative">
                 <div
@@ -70,12 +69,12 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
                 <h2
                     className={`
             text-4xl sm:text-5xl md:text-6xl font-black drop-shadow-2xl
-            ${result.won ? 'text-emerald-300' : 'text-rose-300'}
+            ${result.won ? 'text-emerald-400' : 'text-rose-400'}
           `}
                 >
                     {result.won ? GAME_CONFIG.texts.victory : GAME_CONFIG.texts.defeat}
                 </h2>
-                <p className=" text-base sm:text-lg md:text-xl animate-pulse-slow">
+                <p className={" text-base sm:text-lg md:text-xl animate-pulse-slow " + GAME_CONFIG.colors.textPrimary}>
                     {result.won ? GAME_CONFIG.texts.victoryMessage : GAME_CONFIG.texts.defeatMessage}
                 </p>
             </div>
@@ -83,14 +82,14 @@ export const FeedbackScreen: React.FC<Props> = ({ GAME_CONFIG, result, onPlayAga
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 w-full max-w-sm">
                 <div className="grid grid-cols-2 gap-3 sm:gap-4 text-center">
                     <div>
-                        <div className=" text-xs sm:text-sm">Pares</div>
-                        <div className=" text-xl sm:text-2xl font-bold">
+                        <div className={"text-xs sm:text-sm "+ GAME_CONFIG.colors.textPrimary}>Pares</div>
+                        <div className={GAME_CONFIG.colors.textPrimary +" text-xl sm:text-2xl font-bold"}>
                             {result.pairsFound}/{result.totalPairs}
                         </div>
                     </div>
                     <div>
-                        <div className=" text-xs sm:text-sm">Tempo</div>
-                        <div className=" text-xl sm:text-2xl font-bold">
+                        <div className={GAME_CONFIG.colors.textPrimary +" text-xs sm:text-sm"}>Tempo</div>
+                        <div className={GAME_CONFIG.colors.textPrimary +" text-xl sm:text-2xl font-bold"}>
                             {result.timeSpent}s
                         </div>
                     </div>

@@ -71,18 +71,17 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
 
     return (
         <div className="flex flex-col items-center gap-4 sm:gap-4 w-full max-w-4xl mx-auto px-3 sm:px-4 py-2 animate-fade-in">
-            {/* <img src={GAME_CONFIG.logo} alt="" className='w-[40vw] min-w-100' /> */}
             {/* Header */}
             <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-3">
                 <button
                     onClick={onExit}
-                    className=" transition-colors text-sm  order-2 sm:order-1"
+                    className={GAME_CONFIG.colors.textPrimary +" transition-colors text-sm  order-2 sm:order-1"}
                 >
                     <FontAwesomeIcon icon={faArrowLeftLong} className='mr-2'/>
                      Sair
                 </button>
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-2 order-1 sm:order-2">
-                    <span className=" font-bold text-sm sm:text-base">
+                    <span className={GAME_CONFIG.colors.textPrimary +" font-bold text-sm sm:text-base"}>
                         {GAME_CONFIG.texts.pairsFound}: {pairsFound}/{totalPairs}
                     </span>
                 </div>
@@ -106,7 +105,7 @@ export const GameScreen: React.FC<Props> = ({ GAME_CONFIG, difficulty, onFinish,
                     </>
                 ) : (
                     <>
-                        <div className="text-lg sm:text-2xl font-bold ">
+                        <div className={GAME_CONFIG.colors.textPrimary +" text-lg sm:text-2xl font-bold "}>
                             <FontAwesomeIcon icon={faBullseye} className='mr-2 text-red-700'/>
                              {GAME_CONFIG.texts.playing}
                         </div>

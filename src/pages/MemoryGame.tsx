@@ -30,7 +30,8 @@ const MemoryGame: React.FC = () => {
     return (
         <div
             className={`
-                h-screen
+                h-full
+                min-h-screen
                 w-full
                 bg-linear-to-br ${GAME_CONFIG.colors.bgGradient}
                 relative 
@@ -41,12 +42,12 @@ const MemoryGame: React.FC = () => {
             <div></div>
             {/* Bolhas decorativas de fundo */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-500 rounded-full blur-3xl opacity-20 animate-blob" />
-                <div className="absolute top-1/3 -right-40 w-96 h-96 bg-red-500 rounded-full blur-3xl opacity-20 animate-blob animation-delay-2000" />
-                <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-500 rounded-full blur-3xl opacity-20 animate-blob animation-delay-4000" />
+                <div className="absolute -top-40 -left-40 w-80 h-80 bg-purple-500/60 rounded-full blur-3xl opacity-20 animate-blob" />
+                <div className="absolute top-1/3 -right-40 w-96 h-96 bg-red-500/60 rounded-full blur-3xl opacity-20 animate-blob animation-delay-2000" />
+                <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-blue-500/60 rounded-full blur-3xl opacity-20 animate-blob animation-delay-4000" />
             </div>
 
-            <img src={GAME_CONFIG.logo} alt="" className='h-[70vw] max-h-80' />
+            <img src={GAME_CONFIG.logo} alt="" className='h-[70vw] max-h-75' />
             <div className="relative z-10 w-full flex items-center justify-center">
 
                 {screen === 'home' && <HomeScreen GAME_CONFIG={GAME_CONFIG} onStart={() => setScreen('difficulty')} />}

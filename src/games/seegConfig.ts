@@ -45,17 +45,16 @@ export const SEEG_CONFIG: GameConfig = {
 
     // 🎨 Paleta de cores (Tailwind classes)
     colors: {
-        bgGradient: 'from-red-50/40 via-blue-50/40 to-green-50/40',
-        cardBack: 'from-[#E6ECEB] via-[#C2D1CF] to-[#A4BDBA]',
-        cardFront: 'from-white to-slate-100',
-        primary: 'from-emerald-500 to-teal-600',
-        secondary: 'from-rose-500 to-pink-600',
-        warning: 'from-amber-500 to-orange-600',
+        bgGradient: 'from-slate-200 via-gray-300 to-blue-200',
+        cardBack: 'from-slate-200 via-slate-300 to-blue-200',
+        cardFront: 'from-white to-slate-50',
+        primary: 'from-blue-900 to-slate-900',
+        secondary: 'from-yellow-400 to-amber-500',
+        warning: 'from-orange-400 to-orange-500',
         danger: 'from-red-500 to-rose-600',
-        textPrimary: 'text-black',
-        textSecondary: 'text-slate-200',
+        textPrimary: 'text-slate-800',
+        textSecondary: 'text-slate-600',
     },
-
     cardSymbols: [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10],
 
     // ⏱️ Configurações de dificuldade
@@ -65,7 +64,7 @@ export const SEEG_CONFIG: GameConfig = {
             pairs: 10,           // 6 pares = 12 cartas
             gridCols: 4,        // 4 colunas
             memorizeTime: 10,   // segundos para memorizar
-            playTime: 45,       // segundos para jogar
+            playTime: 60,       // segundos para jogar
             color: 'from-emerald-500 to-teal-600',
             icon: '✅',
         },
@@ -92,6 +91,6 @@ export const SEEG_CONFIG: GameConfig = {
     // ⚡ Configurações de animação
     animations: {
         flipDuration: 600,      // ms — duração do flip
-        mismatchDelay: 1000,    // ms — tempo antes de virar cartas erradas
+        mismatchDelay: 800,    // ms — tempo antes de virar cartas erradas
     },
 } as const;

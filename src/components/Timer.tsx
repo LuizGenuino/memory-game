@@ -23,13 +23,13 @@ export const Timer: React.FC<TimerProps> = ({GAME_CONFIG, seconds, total, label,
     return (
         <div className="w-full max-w-md">
             <div className="flex items-center justify-between mb-2">
-                <span className=" text-sm sm:text-base font-medium">
+                <span className={GAME_CONFIG.colors.textPrimary +" text-sm sm:text-base font-medium"}>
                     {label ?? GAME_CONFIG.texts.timeLeft}
                 </span>
                 <span
                     className={`
-            font-bold tabular-nums text-lg sm:text-2xl
-            ${isLow ? 'text-red-400 animate-pulse' : 'text-black'}
+            font-bold tabular-nums text-lg sm:text-2xl 
+            ${isLow ? 'text-red-400 animate-pulse' : GAME_CONFIG.colors.textPrimary}
           `}
                 >
                     {seconds}s

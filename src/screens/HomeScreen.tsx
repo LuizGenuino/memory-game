@@ -13,10 +13,8 @@ interface Props {
 export const HomeScreen: React.FC<Props> = ({ GAME_CONFIG, onStart }) => {
     return (
         <div className="flex flex-col items-center justify-center gap-8 sm:gap-12 animate-fade-in">
-            {/* Logo animado */}
             <div className="relative">
                 <div className="absolute inset-0 blur-3xl" />
-                {/* <img src={GAME_CONFIG.logo} alt="" className='w-[50vw] min-w-100 mb-6' /> */}
                 <div className="relative flex gap-2 sm:gap-4 mb-4 sm:mb-8 justify-center flex-wrap">
                     {['🎴', '🧠', '⚡'].map((emoji, i) => (
                         <div
@@ -31,10 +29,10 @@ export const HomeScreen: React.FC<Props> = ({ GAME_CONFIG, onStart }) => {
             </div>
 
             <div className="text-center space-y-3 sm:space-y-4 px-4">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl tracking-tight">
+                <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black drop-shadow-2xl tracking-tight ${GAME_CONFIG.colors.textPrimary}`}>
                     {GAME_CONFIG.texts.gameTitle}
                 </h1>
-                <p className="text-base sm:text-lg md:text-xl max-w-md mx-auto">
+                <p className={`text-base sm:text-lg md:text-xl max-w-md mx-auto ${GAME_CONFIG.colors.textSecondary}`}>
                     {GAME_CONFIG.texts.gameSubtitle}
                 </p>
             </div>
