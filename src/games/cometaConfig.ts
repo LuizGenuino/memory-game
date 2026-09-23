@@ -53,7 +53,7 @@ export const COMETA_CONFIG: GameConfig = {
         warning: 'from-amber-500 to-orange-600',
         danger: 'from-red-500 to-rose-600',
         textPrimary: 'text-black',
-        textSecondary: 'text-slate-200',
+        textSecondary: 'text-slate-900',
     },
 
     cardSymbols: [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10],
@@ -92,6 +92,6 @@ export const COMETA_CONFIG: GameConfig = {
     // ⚡ Configurações de animação
     animations: {
         flipDuration: 600,      // ms — duração do flip
-        mismatchDelay: 1000,    // ms — tempo antes de virar cartas erradas
+        mismatchDelay: 800,    // ms — tempo antes de virar cartas erradas
     },
 } as const;
