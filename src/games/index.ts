@@ -2,9 +2,10 @@ import type { GameConfig } from "../types/game.types";
 import { COMETA_CONFIG } from "./cometaConfig";
 import { DEMO_CONFIG } from "./demoConfig";
 import { IDOMED_CONFIG } from "./idomedConfig";
+import { RACON_CONFIG } from "./raconConfig";
 import { SEEG_CONFIG } from "./seegConfig";
 
-const games = [IDOMED_CONFIG, DEMO_CONFIG, COMETA_CONFIG, SEEG_CONFIG]
+const games = [IDOMED_CONFIG, DEMO_CONFIG, COMETA_CONFIG, SEEG_CONFIG, RACON_CONFIG]
 
 export const getGameBySlug = (slug: string | undefined): GameConfig | undefined => {
     return games.find(game => game.slug === slug)
